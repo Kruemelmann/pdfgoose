@@ -17,21 +17,24 @@
     "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js"
   },
   "build": {
-      "appId": "com.pdfgoose.app",
-      "productName": "pdfgoose",
-      "files": ["build/**/*", "node_modules/**/*"],
-      "directories": {
-          "buildResources": "public"
-      },
-      "linux": {
-          "target": "deb"
-      },
-      "mac": {
-          "target": "dmg"
-      },
-      "win": {
-          "target": "nsis"
-      }
+    "appId": "com.pdfgoose.app",
+    "productName": "pdfgoose",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "linux": {
+      "target": "deb"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -39,6 +42,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -50,10 +54,10 @@
   },
   "browserslist": {
     "production": [
-        "last 1 electron version"
+      "last 1 electron version"
     ],
     "development": [
-        "last 1 electron version"
+      "last 1 electron version"
     ]
   },
   "devDependencies": {
