@@ -35,7 +35,7 @@ function Navbar() {
                 </div>
                 <div className="Navbar_button">
                     <div><MdOutlineEdit /></div>
-                    <div>Annotate</div>
+                    <div>Edit</div>
                 </div>
             </div>
         </div>
