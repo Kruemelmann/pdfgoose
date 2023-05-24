@@ -6,10 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "electron": "ng build && electron ."
+    "test": "ng test"
   },
-  "main": "main.js",
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.0.0",
@@ -23,8 +21,7 @@
     "@fortawesome/angular-fontawesome": "0.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@types/pdfjs-dist": "^2.10.378",
-    "pdfjs-dist": "^3.6.172",
+    "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
@@ -33,7 +30,6 @@
     "@angular/cli": "~16.0.2",
     "@angular/compiler-cli": "^16.0.0",
     "@types/jasmine": "~4.3.0",
-    "electron": "^24.3.1",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

@@ -1,6 +1,6 @@
 import {Component, signal} from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import {Tab, TabService} from "../../services/tab.service";
+import {Tab, TabService} from "../../services/tab/tab.service";
 
 @Component({
   selector: 'app-tabbar',
