@@ -1,6 +1,6 @@
 <div class="Tabbar">
   <div class="tablist">
-    <span class="tabitem" *ngFor="let tab of tabList">
+    <span class="tabitem" *ngFor="let tab of this.tablist()">
       {{tab.title}}
     </span>
   </div>

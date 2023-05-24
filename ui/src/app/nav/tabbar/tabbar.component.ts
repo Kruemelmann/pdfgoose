@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {Tab, TabService} from "../../services/tab.service";
 
 @Component({
   selector: 'app-tabbar',
@@ -9,20 +10,14 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class TabbarComponent {
   addLogo = faPlus;
 
-  tabList: Tab[] = [];
+  readonly tablist = signal<Tab[]>([]);
 
-  constructor(){
-    this.tabList.push({title: 'New Tab', path: ''})
+  constructor(private tabService: TabService){
+    this.tablist = tabService.tabList;
   }
 
   newTab() {
-    this.tabList.push({title: 'New Tab', path: ''})
+    this.tabService.newTab();
   }
-
-}
-
-export interface Tab {
-  title: string;
-  path: string;
 }
 

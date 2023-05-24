@@ -23,7 +23,8 @@
     "@fortawesome/angular-fontawesome": "0.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "rxjs": "~7.8.0",
+    "@types/pdfjs-dist": "^2.10.378",
+    "pdfjs-dist": "^3.6.172",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

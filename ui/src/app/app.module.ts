@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './nav/navbar/navbar.component';
 import { TabbarComponent } from './nav/tabbar/tabbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RenderComponent } from './pdfview/render/render.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TabbarComponent
+    TabbarComponent,
+    RenderComponent
   ],
   imports: [
     BrowserModule,
