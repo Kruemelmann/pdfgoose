@@ -1,0 +1,10 @@
+<div class="Tabbar">
+  <div class="tablist">
+    <span class="tabitem" *ngFor="let tab of tabList">
+      {{tab.title}}
+    </span>
+  </div>
+  <div class="add" (click)="newTab()">
+    AddLogo
+  </div>
+</div>
