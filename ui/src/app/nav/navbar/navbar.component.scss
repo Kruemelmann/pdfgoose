@@ -1,6 +1,6 @@
 .Navbar {
     padding: 15px;
-    font-size: x-large;
+    font-size: large;
     background-color: #373737;
     color: white;
 }
@@ -19,13 +19,13 @@
 }
 
 .Navbar_icon_container {
-    gap: 15px;
+    gap: 20px;
 }
 
 .Navbar_button {
     display: flex;
     flex-direction: row;
-    gap: 2px;
+    gap: 5px;
 }
 
 .Navbar_searchbar{

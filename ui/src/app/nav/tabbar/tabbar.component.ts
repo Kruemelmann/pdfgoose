@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tabbar',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./tabbar.component.scss']
 })
 export class TabbarComponent {
+  addLogo = faPlus;
+
   tabList: Tab[] = [];
 
   constructor(){

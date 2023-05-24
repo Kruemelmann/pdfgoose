@@ -1,8 +1,12 @@
 <div class="Navbar">
     <div class="Navbar_container">
         <div class="Navbar_icon_container">
-            <div> Sidebarlogo </div>
-            <div> pageviewlogo </div>
+            <div>
+                <fa-icon [icon]="sidebarLogo"></fa-icon>
+            </div>
+            <div>
+                <fa-icon [icon]="pagesLogo"></fa-icon>
+            </div>
 
             <select name="zoom" id="zoom">
                 <option value="50">50%</option>
@@ -16,11 +20,11 @@
         </div>
         <div class="Navbar_icon_container">
             <div class="Navbar_button">
-                <div>Eyelogo</div>
+                <fa-icon [icon]="viewLogo"></fa-icon>
                 <div>View</div>
             </div>
             <div class="Navbar_button">
-                <div>Editlogo</div>
+                <fa-icon [icon]="editLogo"></fa-icon>
                 <div>Edit</div>
             </div>
         </div>
