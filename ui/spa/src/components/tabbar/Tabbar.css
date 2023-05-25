@@ -15,8 +15,13 @@
     align-items: center;
     width: 100%;
 }
-.Tabbar_tablist > span{
+
+.Tabbar_tablist > button {
     width: 100%;
+    border: none;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    text-align: center;
 }
 
 .Tabbar_add {

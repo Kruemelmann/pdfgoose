@@ -15,8 +15,9 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 
-tr:hover {background-color: lightgray;}
-
-tr:first-child:hover {
+tr:hover {
+    background-color: lightgray;
+}
+thead tr:first-child:hover {
     background-color: white;
 }

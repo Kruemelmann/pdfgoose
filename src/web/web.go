@@ -12,10 +12,11 @@ import (
 func CreateWebServer(route string, spaFS *fs.FS) *http.Server {
 	r := mux.NewRouter()
 	r.HandleFunc("/file", FileHandler)
+	r.HandleFunc("/file/up", FileUpHandler)
 	r.PathPrefix("/").Handler(http.FileServer(http.FS(*spaFS)))
 
 	//manage all the cors staff
-	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With"})
+	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type"})
 	originsOk := handlers.AllowedOrigins([]string{"*"})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 	srv := &http.Server{

@@ -2,6 +2,7 @@ package web
 
 import (
 	"encoding/json"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -19,11 +20,34 @@ type dirElem struct {
 	Path string
 }
 
+type postBody struct {
+	Path string `json:"path"`
+}
+
 //TODO later persist this so even after restart you will start here
 var basesearchPath = "./"
 
+func FileUpHandler(w http.ResponseWriter, r *http.Request) {
+	dir := path.Dir(basesearchPath)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte("{\"path\": \"" + dir + "\"}"))
+}
+
 func FileHandler(w http.ResponseWriter, r *http.Request) {
-	cd := directoryContent{}
+	pb := postBody{}
+
+	if r.Method == "POST" {
+		body, _ := ioutil.ReadAll(r.Body)
+		json.Unmarshal(body, &pb)
+		if pb.Path != "" {
+			basesearchPath = pb.Path
+		}
+	}
+
+	cd := directoryContent{
+		Directorys: []dirElem{},
+		Files:      []dirElem{},
+	}
 
 	entries, err := os.ReadDir(basesearchPath)
 	if err != nil {
