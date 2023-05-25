@@ -1,0 +1,22 @@
+.FileBrowser {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: lightgray;}
+
+tr:first-child:hover {
+    background-color: white;
+}

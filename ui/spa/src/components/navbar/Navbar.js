@@ -9,14 +9,11 @@ import {
     MdOutlineEdit
 } from 'react-icons/md';
 
-import FileChooser from '../file_choose/FileChooser.js';
-
 function Navbar() {
   return (
     <div className="Navbar">
         <div className="Navbar_container">
             <div className="Navbar_icon_container">
-                <FileChooser />
                 <BiSidebar />
                 <BiBorderAll />
                 <MdOutlineElectricBolt />

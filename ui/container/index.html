@@ -8,5 +8,10 @@
         <script defer src="scripts/main.js"></script>
     </head>
     <!--TODO add src via template injection-->
-    <iframe src="http://localhost:3000" frameborder="0"></iframe>
+    <iframe src="http://localhost:3000" frameborder="0" id="core_frame"></iframe>
+    <script charset="utf-8">
+        document.getElementById('core_frame').onload = function() {
+            document.getElementById('core_frame').src = window.location.hostname
+        }
+    </script>
 </html>
