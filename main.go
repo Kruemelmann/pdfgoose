@@ -1,35 +1,44 @@
 package main
 
 import (
+	"embed"
+	"io/fs"
 	"log"
-	"net/http"
 	"os"
 
-	"github.com/gorilla/mux"
-	"github.com/kruemelmann/pdfgoose/src/desktop"
+	"github.com/kruemelmann/pdfgoose/src/web"
 )
 
 var (
 	//config
-	route   = "0.0.0.0:9000"
-	ui_path = "./ui/container/index.html"
+	route           = "0.0.0.0:9000"
+	uiConteinerPath = "ui/container/index.html"
+
+	uiSpaPath = "ui/spa/build"
 )
+
+//go:embed ui/spa/build/*
+var FrontendSpaFS embed.FS
 
 func main() {
 	l := log.New(os.Stderr, "", 0)
 
-	// TODO gorilla webserver
-	go func() {
-		r := mux.NewRouter()
-		r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-			w.Write([]byte("pdfgoose!\n"))
-		})
-		l.Fatal(http.ListenAndServe("localhost:9000", r))
+	//TODO read envs for a prod and a dev mode
+	spaRoot, err := fs.Sub(FrontendSpaFS, uiSpaPath)
+	if err != nil {
+		l.Fatal(err)
+	}
+	srv := web.CreateWebServer(route, &spaRoot)
+	l.Println("Server started on " + route)
+	l.Fatal(srv.ListenAndServe())
 
-	}()
-
-	a := desktop.CreateAndServeApp(l, ui_path)
-	defer a.Close()
-	// Blocking pattern
-	a.Wait()
+	/*
+		go func() {
+			r := web.CreateWebServer()
+			l.Fatal(http.ListenAndServe("localhost:9000", r))
+		}()
+		a := desktop.CreateAndServeApp(l, uiConteinerPath)
+		defer a.Close()
+		a.Wait()
+	*/
 }
