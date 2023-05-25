@@ -4,21 +4,23 @@ import React, { useState, useEffect } from 'react';
 
 function Tabbar() {
     const [tabs, setTabs] = useState([])
+    const [index, setIndex] = useState(0)
 
-    useEffect(() => {
-        setTabs([{title: "new Tab"}])
+    useEffect((index) => {
+        setTabs([{id: index,title: "new Tab"}])
     }, []);
 
     const newTab = (title) => {
-        setTabs([...tabs, {title: title}])
+        setTabs([...tabs, {id: index,title: "new Tab"}])
+        setIndex(index+1)
     }
 
     return (
         <div className="Tabbar">
             <div className="Tabbar_tablist">
-                {tabs.map((v) => {
+                {tabs.map((v, i) => {
                     return (
-                        <span style={{"text-align": "center"}}>{v.title}</span>
+                        <span key={i} style={{textAlign: "center"}}>{v.title}</span>
                     )
                 })}
             </div>

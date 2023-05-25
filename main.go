@@ -11,7 +11,8 @@ import (
 
 var (
 	//config
-	route = "0.0.0.0:9000"
+	route   = "0.0.0.0:9000"
+	ui_path = "./ui/container/index.html"
 )
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 
 	}()
 
-	a := desktop.CreateAndServeApp(l, "http://localhost:4200")
+	a := desktop.CreateAndServeApp(l, ui_path)
 	defer a.Close()
 	// Blocking pattern
 	a.Wait()
