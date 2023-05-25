@@ -8,21 +8,17 @@
     flex-direction: row;
 }
 
-.tablist{
+.Tabbar_tablist{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
-.tablist > span{
+.Tabbar_tablist > span{
     width: 100%;
 }
 
-.add {
+.Tabbar_add {
     margin-left: auto;
-}
-
-.tabitem {
-    text-align: center;
 }
