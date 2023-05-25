@@ -7,12 +7,11 @@ import {
 import {
     AiOutlineArrowUp
 } from 'react-icons/ai';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function FileBrowser() {
+function FileBrowser({setPdfPath, }) {
     const [files, setFiles] = useState([]);
     const [dirs, setDirs] = useState([]);
-    const [data, setData] = useState();
 
     useEffect(() => {
         fetchFiles("")
@@ -48,7 +47,7 @@ function FileBrowser() {
             )
         } else if (v.Name.endsWith("pdf")){
             return (
-                <tr key={i}>
+                <tr key={i} onClick={() => {setPdfPath(v.Path)}}>
                     <td><BsFillFileEarmarkPdfFill /></td>
                     <td>{v.Name}</td>
                 </tr>

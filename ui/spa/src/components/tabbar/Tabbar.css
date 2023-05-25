@@ -17,10 +17,13 @@
 }
 
 .Tabbar_tablist > button {
+    color: white;
+    font-size: medium;
+    background-color: #373737;
     width: 100%;
     border: none;
-    border-left: solid 1px;
-    border-right: solid 1px;
+    border-left: solid 1px white;
+    border-right: solid 1px white;
     text-align: center;
 }
 

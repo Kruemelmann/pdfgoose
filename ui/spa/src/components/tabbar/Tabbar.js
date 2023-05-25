@@ -18,8 +18,7 @@ function Tabbar() {
         setTabs([...tabs,{
             id: index,
             title: "new Tab "+index,
-            filebrowser_active: true,
-            openPDFPath: "",
+            pdfPath: "",
         }])
         setIndex(index+1)
     }

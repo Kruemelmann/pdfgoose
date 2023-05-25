@@ -2,6 +2,7 @@ package web
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -31,6 +32,17 @@ func FileUpHandler(w http.ResponseWriter, r *http.Request) {
 	dir := path.Dir(basesearchPath)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write([]byte("{\"path\": \"" + dir + "\"}"))
+}
+
+func PDFHandler(w http.ResponseWriter, r *http.Request) {
+	pp := r.URL.Query().Get("path")
+
+	dat, err := os.ReadFile(filepath.Join(basesearchPath, pp))
+	if err != nil {
+		fmt.Println(err)
+	}
+	w.Header().Set("Content-type", "application/pdf")
+	w.Write(dat)
 }
 
 func FileHandler(w http.ResponseWriter, r *http.Request) {

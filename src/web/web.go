@@ -11,6 +11,7 @@ import (
 
 func CreateWebServer(route string, spaFS *fs.FS) *http.Server {
 	r := mux.NewRouter()
+	r.HandleFunc("/pdf", PDFHandler)
 	r.HandleFunc("/file", FileHandler)
 	r.HandleFunc("/file/up", FileUpHandler)
 	r.PathPrefix("/").Handler(http.FileServer(http.FS(*spaFS)))
