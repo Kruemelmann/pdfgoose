@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, signal, HostListener} from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import {Tab, TabService} from "../../services/tab/tab.service";
 

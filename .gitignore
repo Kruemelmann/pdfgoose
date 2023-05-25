@@ -1,2 +1,4 @@
 # Webstorm staff
 .idea/
+build/
+.DS_Store
