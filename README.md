@@ -21,6 +21,7 @@ echo "TODO -> use docker for this"
 
 Pull requests welcome:)
 If you like to do some bigger changes please open an issue, so we can chat about.
+And a list of open todos can be found in the todos list [here](./TODO.md).
 
 ## Authors
 

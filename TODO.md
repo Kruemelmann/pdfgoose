@@ -4,7 +4,7 @@ This is a list of all TODOs
 TODOs get a number so you can refer between them by an id.
 This id is just an index which current one you need to increase by on if you add a todo.
 
-# Last Index *6*
+> Last Index **6**
 
 ## Open
 
