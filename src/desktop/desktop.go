@@ -39,8 +39,8 @@ func CreateAndServeApp(l astikit.StdLogger, ui_path string) *astilectron.Astilec
 	if err = w.Create(); err != nil {
 		l.Fatal(fmt.Errorf("main: creating window failed: %w", err))
 	}
-	//only for debugging
-	w.OpenDevTools()
+	////only for debugging
+	//w.OpenDevTools()
 
 	return a
 }
