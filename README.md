@@ -2,7 +2,7 @@
 
 pdfgoose is a free and open source pdfviewer and pdfeditor. It is based on mozilla/pdf.js as the primary renderer for the documents.
 The desktop application is an electron based web server application, with a core written in golang.
-It is also possible to run the web server independently. So if you don't want to install the desktop application, it can also run on a server.
+It is also possible to run the web server independently. So if you don't want to install the desktop application, pdfgoose can also run on a server.
 
 ## Installation
 
